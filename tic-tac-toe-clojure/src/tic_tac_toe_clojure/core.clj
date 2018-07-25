@@ -20,12 +20,13 @@
   "I don't do a whole lot ... yet."
   [& args]
   (println "test test")
-  (loop [player true
+  (loop [p true
          board board]
     (print-board/print-board board)
     (let [play (read-string (read-line))
-          board (input-play board play player)]
+          board (input-play board play p)]
       (if (check-victory/check board)
-        (print-board/print-board board)
-        (recur (not player) board)))))
+        (do (print-board/print-board board)
+            (println (str "The winner is: " (player p))))
+        (recur (not p) board)))))
 
