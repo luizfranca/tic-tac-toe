@@ -19,7 +19,6 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "test test")
   (loop [p true
          board board]
     (print-board/print-board board)
